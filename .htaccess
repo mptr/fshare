@@ -1,0 +1,7 @@
+Options +FollowSymLinks -MultiViews
+
+RewriteCond %{REQUEST_URI} !^/inc
+RewriteCond %{REQUEST_URI} !^/assets
+RewriteRule ^([A-Za-z0-9-]+)/?$ serve.php?n=$1
+
+ErrorDocument 404 404.php

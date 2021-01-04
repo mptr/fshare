@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+html {
+    min-height: 100%;
+}
+body,h1,h2,p {
+    margin: 0;
+}
+body {
+    background: linear-gradient(-6deg,#151517,#28282a);
+    background-repeat: no-repeat;
+    min-height: calc(100% - 3.6em);
+}
+* {
+    font-family: 'Rubik', sans-serif;
+    color: #ffffff;
+}
+a {
+    text-decoration: none;
+    cursor: default;
+}
+h2 {
+    text-align: center;
+    margin-top: 10vh;
+}
+/* NAV-BAR */
+nav {
+    width: calc(100% - 0em);
+    height: 3.6em;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px -10px 20px 14px #00000085;
+    background: linear-gradient(110deg,#1a1a1c,#2f2f32);
+}
+nav .right {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+nav > * > span, nav > a > * > span {
+    font-size: 1.6em;
+}
+nav > .left > * {
+    display: inline-block;
+}
+nav > * > img, nav > a > * > img {
+    height: 2em;
+}
+nav > div, nav > a > div {
+    cursor: pointer;
+    padding: 0.8em;
+}
+.right:before {
+    content: '';
+    position: absolute;
+    height: 3.6em;
+    width: 150%;
+    right: 0px;
+    background: linear-gradient(90deg,transparent 0%,#ffffff11 30%);
+    transition: ease-in-out 200ms;
+    opacity: 0;
+}
+nav .right:hover:before {
+    opacity: 1;
+}
+/* GRID */
+.fgrid {
+    display: grid;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 2em;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+}
+.fgrid .item {
+    margin: 1.7em;
+    box-shadow: 0px 0px 18px 0px #000000;
+    position:relative;
+    overflow:hidden;
+    border-radius: 0.3em;
+}
+.fgrid .item .preview {
+    cursor: pointer;
+    padding-top: 56%;
+    width: 100%;
+    border-top-right-radius: 0.3em;
+    border-top-left-radius: 0.3em;
+    background-color: transparent;
+    background-image: url(/assets/spinner.svg);
+    background-size: cover;
+    filter: blur(4px) brightness(0.5);
+    box-shadow: inset 0px -20px 10px -20px #0000007d;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.fgrid .item .sub {
+    cursor: pointer;
+    padding: 0.6em;
+    background-color: #eeeeee;
+    border-bottom-left-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+}
+.fgrid .item .sub span.fname{
+    max-width: 65%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.fgrid .item .sub span {
+    color: #000000;
+    display: inline-flex;
+    overflow: hidden;
+}
+.fgrid .item .sub .downloadico {
+    float: right;
+}
+.fgrid .item .preview.main {
+    position:absolute;
+    background-size: contain;
+    filter: blur(0px);
+    z-index:4;
+}
+@media screen and (max-width:1100px) {
+    .fgrid {
+        grid-template-columns: 50% 50%;
+    }
+}
+@media screen and (max-width:600px) {
+    .fgrid {
+        grid-template-columns: 100%;
+        padding: 1em;
+    }
+    .fgrid .item {
+        margin: 1em;
+    }
+    nav {
+        font-size: 0.6em;
+    }
+}
